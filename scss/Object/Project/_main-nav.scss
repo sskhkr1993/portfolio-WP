@@ -1,0 +1,121 @@
+@use "../../Foundation/mixin" as m;
+
+.main-nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  height: 100vh;
+  background: #999;
+  transition: all 0.6s;
+
+  @include m.breakpoint(tab) {
+    position: initial;
+    width: initial;
+    height: initial;
+    background: initial;
+    transition: initial;
+  }
+
+  &.active {
+    right: 0;
+    /*ナビの数が増えた場合縦スクロール*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+
+    @include m.breakpoint(tab) {
+      position: initial;
+      flex-direction: row;
+      transform: initial;
+    }
+  }
+}
+
+.menu {
+  &-item {
+    padding: 0.5rem;
+
+    >a {
+      letter-spacing: 0.1rem;
+      line-height: 1.75rem;
+
+      @include m.breakpoint(tab) {
+        position: relative;
+        margin-left: 2rem;
+      }
+
+      @include m.breakpoint(pc) {
+        margin-left: 3rem;
+      }
+
+      @include m.breakpoint(tab) {
+        &::after {
+          /*clickする前*/
+          content: '';
+          /*絶対配置で線の位置を決める*/
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          /*線になる丸の形状*/
+          width: 100%;
+          height: 3px;
+          border-radius: 50%;
+          background: #7DCE94;
+          /*アニメーションの指定*/
+          transition: all .3s;
+          transform: scale(0.04, 1);
+          /*X方向0.04、Y方向1*/
+          transform-origin: center bottom;
+          /*中央下部基点*/
+        }
+      }
+    }
+  }
+
+  &__item .current-menu-item>a,
+  &__item>a:hover {
+    @include m.breakpoint(tab) {
+      color: #7DCE94;
+
+      &::after {
+        /*クリックしたとき*/
+        height: 1px;
+        /*縦幅を変化*/
+        border-radius: 0;
+        /*丸みをなくす*/
+        transform: scale(0.8, 1);
+        /*X方向0.8、Y方向1にスケール拡大*/
+      }
+    }
+  }
+}
+
+.current-menu-item>a,
+.current-menu-item>a:hover {
+  @include m.breakpoint(tab) {
+    color: #7DCE94;
+
+    &::after {
+      /*クリックしたとき*/
+      height: 1px;
+      /*縦幅を変化*/
+      border-radius: 0;
+      /*丸みをなくす*/
+      transform: scale(0.8, 1);
+      /*X方向0.8、Y方向1にスケール拡大*/
+    }
+  }
+}

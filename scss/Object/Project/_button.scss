@@ -1,0 +1,49 @@
+.button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  margin-top: 4rem;
+  border: solid 1px #3D3D3F;
+  background-color: #F9F8FD;
+
+  &--nav {
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 2px;
+      background-color: #F6F5F3;
+      width: 62%;
+      left: 8px;
+      /*アニメーションの設定*/
+      transition: all .4s;
+    }
+
+    &::before {
+      content: "";
+      top: 10px;
+    }
+
+    &::after {
+      content: "";
+      top: 38px;
+    }
+
+    &.active::before {
+      content: "";
+      top: 25px;
+      left: 8px;
+      transform: translateY(-6px) rotate(45deg);
+      background-color: #3D3D3F;
+    }
+
+    &.active::after {
+      content: "";
+      top: 13px;
+      left: 8px;
+      transform: translateY(6px) rotate(-45deg);
+      background-color: #3D3D3F;
+    }
+  }
+}

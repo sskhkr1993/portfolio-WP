@@ -1,0 +1,105 @@
+@use "../../Foundation/mixin" as m;
+
+.card {
+  &--page {
+    margin-bottom: 3rem;
+
+    @include m.breakpoint(pc) {
+      margin-bottom: 7rem;
+    }
+  }
+
+  &__header {
+    position: relative;
+    top: 0;
+    margin-bottom: 3rem;
+    box-shadow: 0 7px 10px rgb(0 0 0 / 30%);
+    transition: all 0.3s;
+
+    &:hover {
+      top: -10px;
+      box-shadow: 0 7px 10px 7px rgb(0 0 0 / 35%);
+      transition: all 0.4s;
+    }
+
+    &--archive {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__figure {
+    width: 250px;
+    height: 250px;
+    background-image: url(../../../image/works-site.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include m.breakpoint(pc) {
+      width: 350px;
+      height: 350px;
+    }
+
+    &--archive {
+      height: 300px;
+    }
+  }
+
+  &__body {
+    padding-top: 1rem;
+    border-top: solid 1px #2f4e38;
+
+    &--page,
+    &--single {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    line-height: 2rem;
+  }
+
+  &__subtitle {
+    letter-spacing: 0.1rem;
+
+    @include m.breakpoint(pc) {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &__content {
+    font-size: 0.8rem;
+  }
+
+  &__image {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
+
+    &--page {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__caption {
+    padding-top: 1rem;
+    margin-bottom: 2.5rem;
+    border-top: solid 1px #2f4e38;
+    text-align: left;
+
+    @include m.breakpoint(pc) {
+      margin-top: 7rem;
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  &-list__item {
+    margin-bottom: 1.5rem;
+
+    @include m.breakpoint(pc) {
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+}

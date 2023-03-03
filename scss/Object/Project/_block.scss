@@ -1,0 +1,88 @@
+@use "../../Foundation/mixin" as m;
+
+.block {
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-bottom: 10rem;
+
+  @include m.breakpoint(pc) {
+    padding-right: 0;
+    padding-left: 0;
+
+    &--works--archive,
+    &--about,
+    &--contact {
+      margin-bottom: 15rem;
+    }
+  }
+
+  &--page {
+    @include m.breakpoint(pc) {
+      padding-right: 10%;
+      padding-left: 10%;
+      margin-bottom: 15rem;
+    }
+  }
+
+  &--contact,
+  .block {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.75rem;
+  }
+
+  &__heading {
+    display: inline-block;
+    margin-bottom: 6rem;
+    border-bottom: solid 1px #7DCE94;
+
+    &--page {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+
+    &>a {
+      border-bottom: 1px solid #3D3D3F;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.75rem;
+    }
+
+    &--page,
+    &--thanks,
+    &--error {
+      margin-bottom: 4rem;
+
+      @include m.breakpoint(pc) {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+
+  &__link {
+    border-bottom: 1px solid #3D3D3F;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.75rem;
+
+    &--thanks,
+    &--error {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+    word-break: keep-all;
+
+    @include m.breakpoint(tab) {
+      width: 30rem;
+      margin-top: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

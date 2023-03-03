@@ -1,0 +1,97 @@
+@use "../../Foundation/mixin" as m;
+
+.contact {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+  }
+}
+
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &>p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+
+    &>label {
+      text-align: left;
+
+      &>span {
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  &-control {
+    width: 18rem;
+    padding-left: 1rem;
+    text-align: left;
+    border: solid 1px #3D3D3F;
+    background-color: #F9F8FD;
+
+    @include m.breakpoint(tab) {
+      width: 30rem;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.3rem;
+  }
+
+  &__submit {
+    position: relative;
+    top: 0;
+    border: double rgba(125, 206, 148, 1);
+    transition: all 0.3s;
+
+    &:hover {
+      top: -10px;
+      background-color: rgba(125, 206, 148, 1);
+      color: #F9F8FD;
+      box-shadow: 0 7px 10px rgb(0 0 0 / 30%);
+      transition: all 0.4s;
+    }
+  }
+}
+
+.wpcf7 {
+  &-submit {
+    width: initial;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    padding: 0.5rem 1.5rem;
+    margin-top: 4rem;
+    border: double rgb(125, 206, 148);
+    background-color: #F9F8FD;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s;
+
+    &:hover {
+      top: -10px;
+      background-color: rgba(125, 206, 148, 1);
+      color: #F9F8FD;
+      box-shadow: 0 7px 10px rgb(0 0 0 / 30%);
+      transition: all 0.4s;
+    }
+  }
+}
+
+.submit {
+  &__body {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.75rem;
+  }
+}

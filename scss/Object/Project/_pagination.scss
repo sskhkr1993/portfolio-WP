@@ -1,0 +1,68 @@
+@use "../../Foundation/mixin" as m;
+
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+
+.pagination {
+  &-list__text {
+    padding: 0 0.3rem;
+  }
+
+  &>li {
+    margin: 0 1rem;
+  }
+}
+
+.navi-current {
+  border-bottom: 1px solid #7DCE94;
+  width: 1rem;
+}
+
+/*.page {
+  display: none;
+
+  @include m.breakpoint(tab) {
+    display: flex;
+    justify-content: center;
+  }
+}*/
+
+.first {
+  display: none;
+
+  @include m.breakpoint(tab) {
+    display: block;
+    margin: 0 0.5rem 0 1rem;
+  }
+}
+
+.prev,
+.next {
+  @include m.breakpoint(tab) {
+    display: none;
+  }
+}
+
+.last {
+  display: none;
+
+  @include m.breakpoint(tab) {
+    display: block;
+    margin-left: 0.5rem;
+  }
+}
+
+.pageNumbers {
+  display: none;
+
+  @include m.breakpoint(tab) {
+    display: block;
+    order: -1;
+  }
+}

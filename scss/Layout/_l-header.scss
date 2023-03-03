@@ -1,0 +1,16 @@
+@use "../Foundation/mixin" as m;
+
+.l-header {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  background-color: rgba(246, 245, 243, 0.6);
+
+  @include m.breakpoint(tab) {
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  @include m.breakpoint(pc) {}
+}

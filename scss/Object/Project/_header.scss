@@ -1,0 +1,72 @@
+@use "../../Foundation/mixin" as m;
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @include m.breakpoint(tab) {
+    flex-direction: column;
+  }
+
+  @include m.breakpoint(pc) {
+    flex-direction: row;
+  }
+
+  &-logo {
+
+    &__item {
+      @include m.breakpoint(tab) {
+        margin-bottom: 0.5rem;
+      }
+
+      @include m.breakpoint(pc) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__heading {
+      font-size: 1.5rem;
+
+      @include m.breakpoint(pc) {
+        font-size: clamp(2.438rem, 2.325rem + 0.56vw, 3rem);
+        ;
+      }
+    }
+
+    &__link {
+      font-weight: bold;
+    }
+  }
+
+  &__button {
+    position: relative;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    border: double #7DCE94;
+    transition: all .3s;
+
+    @include m.breakpoint(tab) {
+      display: none;
+    }
+
+    &.active {
+      color: rgba(153, 153, 153, 0.65);
+      border: rgba(125, 206, 148, 0);
+    }
+
+    &__text {
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "../../Foundation/mixin" as m;
+
+.main-hero {
+  &__header {
+    width: 100%;
+    padding: 10rem 0;
+    color: #3D3D3F;
+  }
+}
