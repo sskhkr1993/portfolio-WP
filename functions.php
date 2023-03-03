@@ -13,10 +13,8 @@ function add_files()
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
-
 function theme_setup()
 {
-    add_filter('show_admin_bar', '__return_false');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     register_nav_menus(
@@ -26,7 +24,6 @@ function theme_setup()
     );
 }
 add_action('after_setup_theme', 'theme_setup');
-
 
 //タイトル出力
 function portfolio_title($title)
@@ -39,14 +36,6 @@ function portfolio_title($title)
     return $title;
 }
 add_filter('pre_get_document_title', 'portfolio_title');
-
-//画像パス省略
-function imagepassshort($arg)
-{
-    $content = str_replace('"img/', '"' . get_bloginfo('template_directory') . '/img/', $arg);
-    return $content;
-}
-add_action('the_content', 'imagepassshort');
 
 /* the_archive_title 余計な文字を削除 */
 add_filter('get_the_archive_title', function ($title) {
@@ -69,4 +58,4 @@ add_filter('get_the_archive_title', function ($title) {
     return $title;
 });
 
-add_theme_support('automatic - feed - links');
+add_theme_support('automatic-feed-links');
