@@ -5,7 +5,10 @@
     margin-bottom: 3rem;
 
     @include m.breakpoint(pc) {
+      width: 50rem;
+      margin-right: auto;
       margin-bottom: 7rem;
+      margin-left: auto;
     }
   }
 
@@ -68,6 +71,9 @@
   }
 
   &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-size: 0.8rem;
   }
 

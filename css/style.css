@@ -793,7 +793,10 @@ figcaption {
 }
 @media screen and (min-width: 960px) {
   .card--page {
+    width: 50rem;
+    margin-right: auto;
     margin-bottom: 7rem;
+    margin-left: auto;
   }
 }
 .card__header {
@@ -847,6 +850,9 @@ figcaption {
   }
 }
 .card__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   font-size: 0.8rem;
 }
 .card__image {
