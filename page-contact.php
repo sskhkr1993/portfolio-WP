@@ -11,6 +11,10 @@ Template Post Type: page
   <!--contact-->
   <div class="block block--contact">
     <h2 class="block__heading block__heading--contact">CONTACT</h2>
+    <div class="block__content block__content--thanks">
+      <p> お問い合わせありがとうございます。</p>
+      <p> 3日以内に返信いたしますので、しばらくお待ちくださいませ。</p>
+    </div>
     <?php
     //$argsのプロパティを変えていく
     $args = array(

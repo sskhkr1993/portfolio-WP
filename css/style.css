@@ -737,6 +737,9 @@ figcaption {
   letter-spacing: 0.1rem;
   line-height: 1.75rem;
 }
+.block__content--contact {
+  margin-bottom: 3rem;
+}
 .block__content--page, .block__content--thanks, .block__content--error {
   margin-bottom: 4rem;
 }
