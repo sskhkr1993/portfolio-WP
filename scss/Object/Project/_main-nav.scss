@@ -85,26 +85,20 @@
     }
   }
 
-  &__item .current-menu-item>a,
-  &__item>a:hover {
+  &-item>a:hover::after {
     @include m.breakpoint(tab) {
-      color: #7DCE94;
-
-      &::after {
-        /*クリックしたとき*/
-        height: 1px;
-        /*縦幅を変化*/
-        border-radius: 0;
-        /*丸みをなくす*/
-        transform: scale(0.8, 1);
-        /*X方向0.8、Y方向1にスケール拡大*/
-      }
+      height: 1px;
+      /*縦幅を変化*/
+      border-radius: 0;
+      /*丸みをなくす*/
+      transform: scale(0.8, 1);
+      /*X方向0.8、Y方向1にスケール拡大*/
     }
   }
 }
 
-.current-menu-item>a,
-.current-menu-item>a:hover {
+/*現在のページのメニューを緑にする*/
+.current-menu-item>a {
   @include m.breakpoint(tab) {
     color: #7DCE94;
 
