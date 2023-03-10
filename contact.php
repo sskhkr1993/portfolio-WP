@@ -1,18 +1,10 @@
-<?php
-/*
-Template Name: contact
-Template Post Type: page
-*/
-?>
+<?php get_header(); ?>
 
 <main class="l-main l-main--page">
 
   <!--contact-->
   <div class="block block--contact">
-    <h2 class="block__heading block__heading--contact">CONTACT</h2>
-    <div class="block__content block__content--contact">
-      <p>仕事のご依頼やご相談など、お気軽にお問い合わせください。</p>
-    </div>
+    <h2 class="block__heading block__heading--contact"><?php the_title(); ?></h2>
     <?php
     //$argsのプロパティを変えていく
     $args = array(
@@ -34,3 +26,6 @@ Template Post Type: page
   </div>
 
 </main>
+
+<!--footer-->
+<?php get_footer(); ?>

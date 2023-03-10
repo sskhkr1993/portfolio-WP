@@ -8,15 +8,16 @@ Template Post Type: page
 <main class="l-main l-main--thanks">
 
   <!--thanks-->
-  <div class="block block--thanks">
-    <h2 class="block__heading block__heading--thanks">送信完了</h2>
-    <div class="block__content block__content--thanks">
-      <p> お問い合わせありがとうございます。</p>
-      <p> 3日以内に返信いたしますので、しばらくお待ちくださいませ。</p>
-    </div>
-    <a class="block__link block__link--thanks" href="http://portfolio.local/">HOMEへ戻る</a>
-
-  </div>
+  <?php
+  $args = array('page_id' => 102);
+  $the_query = new WP_Query($args);
+  if ($the_query->have_posts()) : ?>
+    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+      <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php the_content(); ?>
+      </div>
+    <?php endwhile; ?>
+  <?php else : endif; ?>
 
 </main>
 

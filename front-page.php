@@ -31,10 +31,35 @@
   </article>
 
   <!--about-->
-  <?php get_template_part('about'); ?>
+  <article class="block block--about">
+    <h2 class="block__heading block__heading--about"> <?php echo esc_html(get_the_title(5)); ?></h2>
+    <?php $args = array('page_id' => 5);
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) : ?>
+      <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+          <?php the_content(); ?>
+        </div>
+      <?php endwhile; ?>
+    <?php else : endif; ?>
+    <?php wp_reset_postdata(); ?>
+  </article>
 
   <!--contact-->
-  <?php get_template_part('contact'); ?>
+  <div class="block block--contact">
+    <h2 class="block__heading block__heading--contact"><?php echo esc_html(get_the_title(9)); ?></h2>
+    <?php
+    $args = array('page_id' => 9);
+    $the_query = new WP_Query($args);
+    if ($the_query->have_posts()) : ?>
+      <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <?php the_content(); ?>
+        </div>
+      <?php endwhile; ?>
+    <?php else : endif; ?>
+  </div>
 
 </main>
 <!--footer-->

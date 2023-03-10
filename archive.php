@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main class="l-main l-main--archive">
+
   <!--WORKS-->
   <article class="block block--works block--works--archive">
     <h2 class="block__heading block__heading--works block__heading--archive"><?php the_archive_title(); ?></h2>
@@ -27,7 +28,6 @@
         <p>記事はありません。</p>
       <?php endif; ?>
     </ul>
-
   </article>
 </main>
 
