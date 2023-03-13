@@ -59,6 +59,7 @@
         </div>
       <?php endwhile; ?>
     <?php else : endif; ?>
+    <?php wp_reset_postdata(); ?>
   </div>
 
 </main>
