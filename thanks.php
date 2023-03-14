@@ -16,9 +16,11 @@ Template Post Type: page
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php the_content(); ?>
       </div>
-    <?php endwhile; ?>
-  <?php else : endif; ?>
-
+  <?php
+    endwhile;
+  endif;
+  wp_reset_postdata();
+  ?>
 </main>
 
 <!--footer-->
