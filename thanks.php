@@ -13,9 +13,7 @@ Template Post Type: page
   $the_query = new WP_Query($args);
   if ($the_query->have_posts()) : ?>
     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-      <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php the_content(); ?>
-      </div>
+      <?php the_content(); ?>
   <?php
     endwhile;
   endif;

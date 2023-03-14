@@ -5,7 +5,6 @@ Template Post Type: page
 */
 ?>
 <?php get_header(); ?>
-
 <main class="l-main l-main--page">
 
   <!--about-->
